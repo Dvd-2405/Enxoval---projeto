@@ -477,7 +477,7 @@ body {
       justify-content: center;
       text-align: center;
       padding: 2rem 1.5rem 2.5rem;
-      color: var(--ink-soft);
+  color: rgba(255, 255, 255, 0.72);   
       font-size: 0.85rem;
       grid-area: footer;
       background-color: #16304a;
