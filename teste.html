@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Enxoval Matheus e Julia</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="teste.css" />
+</head>
+
+
+<body>
+    <header class="hero">
+
+        <div class="carrossel-hero">
+
+            <div class="slides" id="slides">
+
+                <div class="slide slide--capa">
+                    <div class="slide-capa__content">
+                        <p class="slide__eyebrow">
+                            o enxoval de
+                        </p>
+                        <h1 class="slide__title">
+                            Matheus <span>&amp;</span> Julia
+                        </h1>
+                        <p class="slide__message">
+                            Estamos começando um novo capítulo da nossa história.
+                            Cada presente será parte do nosso lar. ❤️
+                        </p>
+                        <p class="slide__date">
+                            💍 Em breve, para sempre.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide slide--foto" style="background-image: url('https://picsum.photos/id/1015/1200/900')">
+                </div>
+                <div class="slide slide--foto" style="background-image: url('https://picsum.photos/id/1025/1200/900')">
+                </div>
+                <div class="slide slide--foto" style="background-image: url('https://picsum.photos/id/1039/1200/900')">
+                </div>
+                <div class="slide slide--foto" style="background-image: url('https://picsum.photos/id/1043/1200/900')">
+                </div>
+            </div>
+
+            <button class="nav-btn prev" onclick="mudar(-1)" aria-label="Foto anterior">
+                &#10094;
+            </button>
+
+            <button class="nav-btn next" onclick="mudar(1)" aria-label="Próxima foto">
+                &#10095;
+            </button>
+            <div class="dots" id="dots"></div>
+        </div>
+        <div class="hero-progress">
+            <div class="dim dim--hero">
+                <div class="dim__track">
+                    <div class="dim__fill" style="width: 0%">
+                    </div>
+                </div>
+                <div class="hero-progress__info">
+                    <span class="dim__value">
+                        0%
+                    </span>
+                    <span class="dim__caption">
+                        do enxoval já é nosso
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="rooms">
+        <div class="rooms-search">
+            <span class="rooms-search__icon" aria-hidden="true">
+                🔍
+            </span>
+            <input type="text" id="buscaItem" class="rooms-search__input" placeholder="Buscar item...">
+        </div>
+        <div class="section-divider"></div>
+        <p class="section-eyebrow">
+            Escolha um cômodo para nos presentear
+        </p>
+        <div class="section-divider"></div>
+        <div class="mobile-tabs-wrap">
+            <nav class="mobile-tabs" id="mobileTabs" aria-label="Cômodos">
+
+
+
+                <button type="button" class="mobile-tabs__chip" data-room="cozinha"
+                    onclick="abrirComodoMobile(event, 'cozinha')">
+
+                    <span class="mobile-tabs__icon">
+                        🍳
+                    </span>
+                    Cozinha
+                </button>
+
+                <button type="button" class="mobile-tabs__chip" data-room="sala"
+                    onclick="abrirComodoMobile(event, 'sala')">
+                    <span class="mobile-tabs__icon">
+                        🛋️
+                    </span>
+                    Sala
+                </button>
+
+                <button type="button" class="mobile-tabs__chip" data-room="quarto"
+                    onclick="abrirComodoMobile(event, 'quarto')">
+                    <span class="mobile-tabs__icon">
+                        🛏️
+                    </span>
+                    Quarto
+                </button>
+
+                <button type="button" class="mobile-tabs__chip" data-room="banheiro"
+                    onclick="abrirComodoMobile(event, 'banheiro')">
+                    <span class="mobile-tabs__icon">
+                        🚿
+                    </span>
+                    Banheiro
+                </button>
+                <button type="button" class="mobile-tabs__chip" data-room="lavanderia"
+                    onclick="abrirComodoMobile(event, 'lavanderia')">
+                    <span class="mobile-tabs__icon">
+                        🧺
+                    </span>
+                    Lavanderia
+                </button>
+                <button type="button" class="mobile-tabs__chip" data-room="gourmet"
+                    onclick="abrirComodoMobile(event, 'gourmet')">
+                    <span class="mobile-tabs__icon">
+                        🍽️
+                    </span>
+                    Área gourmet
+                </button>
+            </nav>
+            <span class="mobile-tabs__arrow">
+                &#10132;
+            </span>
+        </div>
+        <div class="room-grid">
+            <div class="gift-card" id="giftCard">
+                <div class="gift-card__header" onclick="togglePixCard()">
+                    <div class="gift-card__icon"> 💵 </div>
+                    <h2> Cartão Presente </h2>
+                    <p> Presente financeiro </p>
+                    <span class="gift-card__arrow"> + </span>
+                </div>
+                <div class="gift-card__content">
+                    <p class="gift-card__text"> Se preferir, você pode nos presentear diretamente via Pix. ❤️ </p>
+                    <img class="gift-card__qr" src="./assets/QRcodePIX.jpg" alt="QR Code Pix">
+                    <p class="gift-card__label"> Ou copie a chave Pix: </p>
+                    <div class="gift-card__pix">
+                        <span id="chavePix"> Matheusverdan07@gmail.com </span>
+                        <button type="button" onclick="copiarChave()"> Copiar </button>
+                    </div>
+                    <div class="gift-card__bank">
+                        <p> Nome:<strong> MATHEUS VERDAN CAMPOS MACHADO</strong> </p>
+                        <p> Banco: <strong> Santander </strong> </p>
+                    </div>
+                </div>
+            </div>
+            <a class="room-card" href="#cozinha" data-room="cozinha" onclick="abrirComodo(event, 'cozinha')">
+
+                <div class="room-card__tag">
+                    <span class="room-card__icon">
+                        🍳
+                    </span>
+                </div>
+                <h2 class="room-card__name">
+                    Cozinha
+                </h2>
+                <p class="room-card__count">
+                    0/0 itens
+                </p>
+                <div class="dim dim--card">
+                    <div class="dim__track">
+                        <div class="dim__fill" style="width:0%">
+                        </div>
+                    </div>
+                    <span class="dim__value dim__value--sm">
+                        0%
+                    </span>
+                </div>
+            </a>
+
+            <a class="room-card" href="#sala" data-room="sala" onclick="abrirComodo(event, 'sala')">
+                <div class="room-card__tag">
+                    <span class="room-card__icon">
+                        🛋️
+                    </span>
+                </div>
+                <h2 class="room-card__name">
+                    Sala
+                </h2>
+                <p class="room-card__count">
+                    0/0 itens
+                </p>
+                <div class="dim dim--card">
+                    <div class="dim__track">
+                        <div class="dim__fill" style="width:0%">
+                        </div>
+                    </div>
+                    <span class="dim__value dim__value--sm">
+                        0%
+                    </span>
+                </div>
+            </a>
+
+            <a class="room-card" href="#quarto" data-room="quarto" onclick="abrirComodo(event, 'quarto')">
+                <div class="room-card__tag">
+                    <span class="room-card__icon">
+                        🛏️
+                    </span>
+                </div>
+                <h2 class="room-card__name">
+                    Quarto
+                </h2>
+                <p class="room-card__count">
+                    0/0 itens
+                </p>
+                <div class="dim dim--card">
+                    <div class="dim__track">
+                        <div class="dim__fill" style="width:0%">
+                        </div>
+                    </div>
+                    <span class="dim__value dim__value--sm">
+                        0%
+                    </span>
+                </div>
+            </a>
+
+            <a class="room-card" href="#banheiro" data-room="banheiro" onclick="abrirComodo(event, 'banheiro')">
+                <div class="room-card__tag">
+                    <span class="room-card__icon">
+                        🚿
+                    </span>
+                </div>
+                <h2 class="room-card__name">
+                    Banheiro
+                </h2>
+                <p class="room-card__count">
+                    0/0 itens
+                </p>
+                <div class="dim dim--card">
+                    <div class="dim__track">
+                        <div class="dim__fill" style="width:0%">
+                        </div>
+                    </div>
+                    <span class="dim__value dim__value--sm">
+                        0%
+                    </span>
+                </div>
+            </a>
+
+            <a class="room-card" href="#lavanderia" data-room="lavanderia" onclick="abrirComodo(event, 'lavanderia')">
+                <div class="room-card__tag">
+                    <span class="room-card__icon">
+                        🧺
+                    </span>
+                </div>
+                <h2 class="room-card__name">
+                    Lavanderia
+                </h2>
+                <p class="room-card__count">
+                    0/0 itens
+                </p>
+                <div class="dim dim--card">
+                    <div class="dim__track">
+                        <div class="dim__fill" style="width:0%">
+                        </div>
+                    </div>
+                    <span class="dim__value dim__value--sm">
+                        0%
+                    </span>
+                </div>
+            </a>
+            <a class="room-card" href="#gourmet" data-room="gourmet" onclick="abrirComodo(event, 'gourmet')">
+                <div class="room-card__tag">
+                    <span class="room-card__icon">
+                        🍽️
+                    </span>
+                </div>
+                <h2 class="room-card__name">
+                    Área gourmet
+                </h2>
+                <p class="room-card__count">
+                    0/0 itens
+                </p>
+                <div class="dim dim--card">
+                    <div class="dim__track">
+                        <div class="dim__fill" style="width:0%">
+                        </div>
+                    </div>
+                    <span class="dim__value dim__value--sm">
+                        0%
+                    </span>
+                </div>
+            </a>
+        </div>
+
+        <section class="comodo-section" id="comodoSection">
+
+            <div class="comodo-section__inner">
+
+                <button class="comodo-section__voltar" onclick="fecharComodo()">
+                    ← Voltar
+                </button>
+
+                <div class="comodo-section__header">
+                    <span class="comodo-section__icon" id="comodoIcone">
+                    </span>
+                    <h2 class="comodo-section__titulo" id="comodoTitulo">
+                    </h2>
+                </div>
+                <div class="dim dim--card" id="comodoProgresso">
+                    <div class="dim__track">
+                        <div class="dim__fill" id="comodoFill" style="width:0%">
+                        </div>
+                    </div>
+                    <span class="dim__value dim__value--sm" id="comodoPercentual">
+                        0%
+                    </span>
+                </div>
+
+                <div class="comodo-itens" id="comodoItens">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Feito com carinho para o começo da nossa casa. 🏠
+        </p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+
+</html>
