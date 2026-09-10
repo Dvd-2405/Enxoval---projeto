@@ -86,6 +86,7 @@ body {
       color: #fff;
       grid-area: hero;
       padding: 0;
+      min-width: 0; 
     }
 
     .hero-carrossel {
