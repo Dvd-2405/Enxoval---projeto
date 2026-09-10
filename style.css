@@ -28,6 +28,9 @@
     }
 
     .mobile-pix-card {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
       display: none;
     }
 
@@ -50,10 +53,12 @@
         "hero"
         "rooms"
         "footer";
-    } 
-    html, body {
-  overflow-x: hidden;
-}
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
 
     img {
       max-width: 100%;
@@ -328,12 +333,12 @@
     }
 
     .rooms {
-  max-width: min(100%, 1600px);
-  margin: 0 auto;
-  padding: 3rem 1.25rem 1rem;
-  grid-area: rooms;
-  min-width: 0;
-}
+      max-width: min(100%, 1600px);
+      margin: 0 auto;
+      padding: 3rem 1.25rem 1rem;
+      grid-area: rooms;
+      min-width: 0;
+    }
 
     .rooms-search {
       display: flex;
@@ -350,7 +355,7 @@
       border: none;
       align-items: center;
       justify-content: center;
- font-size: 16px;
+      font-size: 16px;
     }
 
     .section-eyebrow {
@@ -463,6 +468,9 @@
     }
 
     .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
       padding: 2rem 1.5rem 2.5rem;
       color: var(--ink-soft);
@@ -586,7 +594,7 @@
 
     .comodo-itens {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.9rem;
       margin-top: 1.5rem;
     }
@@ -634,7 +642,8 @@
       text-transform: uppercase;
       color: #fff;
       padding: 0.3rem 0.7rem;
-      border-radius: var(--radius);
+      border-radius: 999px;
+      cursor: default;
       align-self: flex-start;
     }
 
@@ -942,7 +951,8 @@
       text-transform: uppercase;
       color: #fff;
       padding: 0.3rem 0.7rem;
-      border-radius: var(--radius);
+      border-radius: 999px;
+      cursor: default;
       margin-bottom: 0.75rem;
     }
 
@@ -962,10 +972,19 @@
       background: var(--paper);
       color: var(--ink);
       border: 1px dashed var(--navy);
+      border-radius: 10px;
     }
 
     .item-detalhe__btn--reservar:disabled {
       opacity: 0.5;
       cursor: not-allowed;
       border-color: var(--line-soft);
+    }
+
+    .item-detalhe__btn__item-detalhe__btn--reservar {
+      border-radius: 10px solid;
+      border-color: black;
+      cursor: pointer;
+      color: #ffffff;
+      background: var(--navy);
     }
