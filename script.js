@@ -328,9 +328,9 @@ function presentearItem() {
   abrirPix(new Event("click"));
 } 
 const logosLoja = {
-  mercadolivre: "./assets/logos/mercadolivre.png",
-  shein: "./assets/logos/shein.png",
-  shopee: "./assets/logos/shopee.png",
+  mercadolivre: "./assets/ML.jpg",
+  shein: "./assets/shein.jpg",
+  shopee: "./assets/shopee.jpg",
 };
 
 function detectarLoja(link) {
