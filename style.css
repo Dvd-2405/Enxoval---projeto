@@ -1,26 +1,31 @@
 body {
   max-width: 100vw;
+}:root {
+  --navy: #16304a;
+  --navy-line: #8fc1d6;
+  --paper: #faf3e7;
+  --ink: #24303d;
+  --ink-soft: #5b6b78;
+  --line-soft: rgba(22, 48, 74, 0.16);
+
+  --sage: #9c9686;
+  --sage-bg: #ece8de;
+  --sage-text: #6b6558;
+
+  --gold: #c9a227;
+  --gold-bg: #f0dfa8;
+  --gold-text: #8a6d1d;
+
+  --rose: var(--navy);
+  --rose-dark: var(--navy);
+  --rose-bg: #ece8de;
+  --rose-text: var(--ink-soft);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --radius: 3px;
 }
-:root {
-      --navy: #16304a;
-      --navy-line: #8fc1d6;
-      --paper: #faf3e7;
-      --ink: #24303d;
-      --ink-soft: #5b6b78;
-      --line-soft: rgba(22, 48, 74, 0.16);
-
-
-      --sage-text: #5c7256;
-      --gold-bg: #f3e6c8;
-      --gold-text: #8a6d2f;
-      --rose-bg: #f1dede;
-      --rose-text: #9a5b62;
-
-      --font-display: "Fraunces", serif;
-      --font-body: "Inter", system-ui, sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, monospace;
-      --radius: 3px;
-    }
 
     .mobile-tabs {
       display: none;
