@@ -374,3 +374,22 @@ function irPara(indice) {
 
 criarDots();
 atualizarCarrossel();
+
+
+function atualizarResumoComodos() {
+  document.querySelectorAll(".room-card[data-room]").forEach((card) => {
+    const comodo = comodos[card.dataset.room];
+    if (!comodo) return;
+
+    const total = comodo.itens.length;
+    const comprados = comodo.itens.filter((i) => i.status === "comprado").length;
+    const percentual = calcularProgresso(comodo.itens);
+
+    card.querySelector(".room-card__count").textContent = `${comprados}/${total} itens`;
+    card.querySelector(".dim__fill").style.width = percentual + "%";
+    card.querySelector(".dim__value").textContent = percentual + "%";
+  });
+}
+criarDots();
+atualizarCarrossel();
+atualizarResumoComodos();
