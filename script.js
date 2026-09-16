@@ -392,4 +392,10 @@ function atualizarResumoComodos() {
 }
 criarDots();
 atualizarCarrossel();
-atualizarResumoComodos();
+atualizarResumoComodos(); 
+
+document.getElementById("itemDetalheModal").addEventListener("click", function (e) {
+  if (e.target === this) {
+    fecharItemDetalhe();
+  }
+});
